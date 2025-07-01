@@ -1,6 +1,6 @@
 import React from 'react';
 import { motion } from 'framer-motion';
-import { FiArrowRight, FiGithub, FiTwitter } from 'react-icons/fi';
+import { FiArrowRight } from 'react-icons/fi';
 import './CTA.css';
 
 const CTA = () => {

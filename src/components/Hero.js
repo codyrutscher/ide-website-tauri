@@ -75,7 +75,7 @@ const Hero = () => {
           transition={{ delay: 0.5 }}
         >
           <button className="btn btn-primary" onClick={handleDownloadClick}>
-            Free Download
+            Free Download {detectedOS && `for ${detectedOS}`}
           </button>
           
         </motion.div>

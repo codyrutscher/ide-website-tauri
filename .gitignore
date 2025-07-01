@@ -61,5 +61,14 @@ tmp/
 temp/
 
 # Large media files
+*.mp4
+*.mov
+*.avi
+*.mkv
+*.webm
+*.flv
+*.wmv
+*.mpg
+*.mpeg
 public/cody.mp4
 
