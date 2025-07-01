@@ -215,6 +215,7 @@
 .video-container {
   position: relative;
   width: 100%;
+  padding-bottom: 56.25%; /* 16:9 Aspect Ratio */
   background: #0f0f0f;
   border-radius: 16px;
   overflow: hidden;
@@ -224,8 +225,11 @@
 }
 
 .demo-video {
+  position: absolute;
+  top: 0;
+  left: 0;
   width: 100%;
-  height: auto;
+  height: 100%;
   display: block;
 }
 
