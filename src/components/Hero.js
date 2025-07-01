@@ -122,14 +122,15 @@ const Hero = () => {
       >
         <h3 className="demo-title">See Cody in Action</h3>
         <div className="video-container">
-          <video 
-            src="/cody.mp4" 
-            controls
+          <iframe 
+            src="https://www.youtube.com/embed/LFx5PugeP8U"
+            title="Cody Editor Demo"
+            frameBorder="0"
+            allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
+            allowFullScreen
             className="demo-video"
-            poster="/cody.png"
           >
-            Your browser does not support the video tag.
-          </video>
+          </iframe>
         </div>
       </motion.div>
     </section>
