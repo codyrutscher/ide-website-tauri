@@ -60,3 +60,6 @@ jspm_packages/
 tmp/
 temp/
 
+# Large media files
+public/cody.mp4
+
