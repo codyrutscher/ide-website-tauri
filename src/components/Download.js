@@ -7,6 +7,7 @@ import './Download.css';
 const Download = () => {
   const [detectedOS, setDetectedOS] = useState('');
   const [showAllPlatforms, setShowAllPlatforms] = useState(false);
+  const [showMacInstructions, setShowMacInstructions] = useState(false);
 
   useEffect(() => {
     const userAgent = window.navigator.userAgent.toLowerCase();
@@ -89,12 +90,22 @@ const Download = () => {
                 ))}
               </div>
             </div>
-            <a href={primaryPlatform.downloadUrl} download>
-              <button className="download-btn">
+            {primaryPlatform.name === 'macOS' ? (
+              <button 
+                className="download-btn"
+                onClick={() => setShowMacInstructions(true)}
+              >
                 <FiDownload />
                 Download for {primaryPlatform.name}
               </button>
-            </a>
+            ) : (
+              <a href={primaryPlatform.downloadUrl} download>
+                <button className="download-btn">
+                  <FiDownload />
+                  Download for {primaryPlatform.name}
+                </button>
+              </a>
+            )}
           </div>
 
           <button 
@@ -130,12 +141,22 @@ const Download = () => {
                     {platform.version} • {platform.size}
                   </p>
                 </div>
-                <a href={platform.downloadUrl} download>
-                  <button className="download-btn small">
+                {platform.name === 'macOS' ? (
+                  <button 
+                    className="download-btn small"
+                    onClick={() => setShowMacInstructions(true)}
+                  >
                     <FiDownload />
                     Download
                   </button>
-                </a>
+                ) : (
+                  <a href={platform.downloadUrl} download>
+                    <button className="download-btn small">
+                      <FiDownload />
+                      Download
+                    </button>
+                  </a>
+                )}
               </motion.div>
             ))}
           </motion.div>
@@ -191,6 +212,49 @@ const Download = () => {
             </div>
           </div>
         </motion.div>
+
+        {showMacInstructions && (
+          <div className="modal-overlay" onClick={() => setShowMacInstructions(false)}>
+            <motion.div 
+              className="modal-content"
+              initial={{ opacity: 0, scale: 0.9 }}
+              animate={{ opacity: 1, scale: 1 }}
+              onClick={(e) => e.stopPropagation()}
+            >
+              <h3>macOS Installation Instructions</h3>
+              <p className="modal-warning">
+                ⚠️ The app is not yet code-signed, so macOS may show a "damaged" error.
+              </p>
+              
+              <div className="instructions-section">
+                <h4>To install Cody Editor on macOS:</h4>
+                <ol>
+                  <li>
+                    <a href={platforms.find(p => p.name === 'macOS').downloadUrl} download>
+                      Download CodyEditor.dmg
+                    </a>
+                  </li>
+                  <li>Open Terminal and run this command to remove the quarantine flag:
+                    <code>xattr -cr /Applications/CodyEditor.app</code>
+                  </li>
+                  <li>Alternatively, right-click the app and select "Open" twice</li>
+                </ol>
+              </div>
+              
+              <div className="instructions-section">
+                <h4>Why does this happen?</h4>
+                <p>macOS requires apps to be signed by registered developers. We're working on getting our developer certificate.</p>
+              </div>
+              
+              <button 
+                className="btn btn-primary"
+                onClick={() => setShowMacInstructions(false)}
+              >
+                Got it
+              </button>
+            </motion.div>
+          </div>
+        )}
       </div>
     </section>
   );
