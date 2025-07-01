@@ -235,7 +235,7 @@ const Download = () => {
                     </a>
                   </li>
                   <li>Open Terminal and run this command to remove the quarantine flag:
-                    <code>xattr -cr /Applications/CodyEditor.app</code>
+                    <code>xattr -cr "/Applications/Tauri IDE.app"</code>
                   </li>
                   <li>Alternatively, right-click the app and select "Open" twice</li>
                 </ol>
