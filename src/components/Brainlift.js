@@ -186,8 +186,8 @@ const [activeFile, setActiveFile] = useState<string | null>(null);`}</code></pre
               <p><strong>Problem</strong>: How to detect file operations in terminal output?</p>
               <p><strong>Solution</strong>: Regex patterns to match common file operations:</p>
               <pre><code>{`const filePatterns = [
-  /(?:created?|wrote?|saved?).*?(['\"]?)([^'\"]+\\.[\w]+)\\1/gi,
-  /(?:File|Created|Wrote|Saved)[:\\s]+([^\\s]+\\.[\w]+)/gi
+  /(?:created?|wrote?|saved?).*?(['\"]?)([^'\"]+\\.[\\w]+)\\1/gi,
+  /(?:File|Created|Wrote|Saved)[:s]+([^\\s]+\\.[\\w]+)/gi
 ];`}</code></pre>
             </div>
 
