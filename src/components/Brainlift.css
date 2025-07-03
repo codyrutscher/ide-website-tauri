@@ -1,0 +1,237 @@
+.brainlift-page {
+  min-height: 100vh;
+  background: linear-gradient(180deg, #000000 0%, #0a0a0a 100%);
+  padding: 120px 20px 80px;
+}
+
+.brainlift-container {
+  max-width: 900px;
+  margin: 0 auto;
+}
+
+.brainlift-content {
+  background: rgba(255, 255, 255, 0.03);
+  border: 1px solid rgba(255, 255, 255, 0.1);
+  border-radius: 24px;
+  padding: 60px;
+  backdrop-filter: blur(10px);
+}
+
+.brainlift-content h1 {
+  font-size: clamp(36px, 5vw, 48px);
+  font-weight: 800;
+  margin-bottom: 48px;
+  background: linear-gradient(135deg, #6366f1 0%, #a855f7 100%);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  background-clip: text;
+  text-align: center;
+  line-height: 1.2;
+}
+
+.brainlift-content h2 {
+  font-size: 32px;
+  font-weight: 700;
+  margin-top: 48px;
+  margin-bottom: 24px;
+  color: #f1f5f9;
+}
+
+.brainlift-content h3 {
+  font-size: 24px;
+  font-weight: 600;
+  margin-top: 32px;
+  margin-bottom: 16px;
+  color: #e2e8f0;
+}
+
+.brainlift-content h4 {
+  font-size: 20px;
+  font-weight: 600;
+  margin-bottom: 12px;
+  color: #cbd5e1;
+}
+
+.brainlift-content p {
+  font-size: 16px;
+  line-height: 1.8;
+  color: #94a3b8;
+  margin-bottom: 16px;
+}
+
+.brainlift-content ul,
+.brainlift-content ol {
+  margin-bottom: 24px;
+  padding-left: 32px;
+}
+
+.brainlift-content li {
+  font-size: 16px;
+  line-height: 1.8;
+  color: #94a3b8;
+  margin-bottom: 8px;
+}
+
+.brainlift-content strong {
+  color: #e2e8f0;
+  font-weight: 600;
+}
+
+.brainlift-content pre {
+  background: #0f0f0f;
+  border: 1px solid rgba(255, 255, 255, 0.1);
+  border-radius: 12px;
+  padding: 20px;
+  margin: 24px 0;
+  overflow-x: auto;
+}
+
+.brainlift-content code {
+  font-family: 'Consolas', 'Monaco', monospace;
+  font-size: 14px;
+  color: #a5b4fc;
+  line-height: 1.6;
+}
+
+.brainlift-content pre code {
+  background: none;
+  padding: 0;
+}
+
+.architecture-diagram {
+  text-align: center;
+  font-size: 16px;
+  background: linear-gradient(135deg, rgba(99, 102, 241, 0.1) 0%, rgba(168, 85, 247, 0.1) 100%);
+  border: 1px solid rgba(99, 102, 241, 0.3);
+  padding: 32px;
+  border-radius: 16px;
+  color: #a5b4fc;
+  font-weight: 500;
+}
+
+.feature-box {
+  background: rgba(99, 102, 241, 0.05);
+  border: 1px solid rgba(99, 102, 241, 0.2);
+  border-radius: 16px;
+  padding: 24px;
+  margin: 16px 0;
+}
+
+.feature-box h4 {
+  color: #a5b4fc;
+  margin-bottom: 16px;
+}
+
+.phase-container {
+  display: grid;
+  gap: 24px;
+  margin: 24px 0;
+}
+
+.phase {
+  background: rgba(255, 255, 255, 0.02);
+  border: 1px solid rgba(255, 255, 255, 0.1);
+  border-radius: 16px;
+  padding: 24px;
+  transition: all 0.3s ease;
+}
+
+.phase:hover {
+  background: rgba(255, 255, 255, 0.04);
+  border-color: rgba(99, 102, 241, 0.3);
+  transform: translateY(-2px);
+}
+
+.phase h3 {
+  color: #6366f1;
+  margin-top: 0;
+}
+
+.challenge {
+  background: rgba(251, 146, 60, 0.05);
+  border: 1px solid rgba(251, 146, 60, 0.2);
+  border-radius: 16px;
+  padding: 24px;
+  margin: 24px 0;
+}
+
+.challenge h3 {
+  color: #fb923c;
+  margin-top: 0;
+}
+
+.future-list li {
+  position: relative;
+  padding-left: 24px;
+}
+
+.future-list li::before {
+  content: "→";
+  position: absolute;
+  left: 0;
+  color: #6366f1;
+  font-weight: bold;
+}
+
+section {
+  margin-bottom: 48px;
+}
+
+.footer-note {
+  text-align: center;
+  margin-top: 64px;
+  padding-top: 32px;
+  border-top: 1px solid rgba(255, 255, 255, 0.1);
+}
+
+.footer-note p {
+  color: #64748b;
+  font-style: italic;
+}
+
+/* Responsive Design */
+@media (max-width: 768px) {
+  .brainlift-content {
+    padding: 32px 24px;
+  }
+  
+  .brainlift-content h1 {
+    font-size: 32px;
+    margin-bottom: 32px;
+  }
+  
+  .brainlift-content h2 {
+    font-size: 24px;
+  }
+  
+  .brainlift-content h3 {
+    font-size: 20px;
+  }
+  
+  .brainlift-content pre {
+    padding: 16px;
+    font-size: 12px;
+  }
+  
+  .phase-container {
+    grid-template-columns: 1fr;
+  }
+}
+
+/* Syntax Highlighting Colors */
+.brainlift-content pre code .keyword {
+  color: #c678dd;
+}
+
+.brainlift-content pre code .string {
+  color: #98c379;
+}
+
+.brainlift-content pre code .function {
+  color: #61afef;
+}
+
+.brainlift-content pre code .comment {
+  color: #5c6370;
+  font-style: italic;
+}
